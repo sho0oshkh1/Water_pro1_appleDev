@@ -8,12 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var i = 0
+    @State private var f = false
     var body: some View {
         VStack {
-            Image(systemName: "globe")
+            Text("Water tracker 💦")
                 .imageScale(.large)
                 .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Toggle(isOn: $f) {
+                Text("Apple health")
+            }
+            Stepper(value: $i, in: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Range@*/1...10/*@END_MENU_TOKEN@*/) {
+                Text("Cups to drink per day \(i)")
+            }
+            Button("Continue") {
+                /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+            }
         }
         .padding()
     }
